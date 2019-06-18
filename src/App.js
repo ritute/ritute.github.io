@@ -27,7 +27,7 @@ const styles = theme => ({
       padding: 100,
     },
     [theme.breakpoints.only('xs')]: {
-      padding: '100px 20px',
+      padding: 20,
     },
   },
   headingContainer: {
@@ -102,7 +102,7 @@ const styles = theme => ({
     color: '#fff',
     textTransform: 'capitalize',
     '&:hover': {
-      backgroundColor: 'cyan',
+      backgroundColor: '#fff',
       color: '#000',
       transform: 'scale(1.1)',
       transition: `all .5s ${theme.transitions.easing.easeInOut}`,
@@ -117,7 +117,7 @@ const styles = theme => ({
     },
   },
   socialLink: {
-
+    flexBasis: 0,
   },
   socialIcon: {
     marginRight: theme.spacing(1),
@@ -212,7 +212,12 @@ const App = ({ classes }) => {
       spacing={2}
     >
       {socialLinks.map((socialLink, index) => (
-        <Grid item className={classes.socialLink} key={index}>
+        <Grid
+          item
+          xs={6} sm={4} md={3}
+          className={classes.socialLink}
+          key={index}
+        >
           <Button
             className={classes.socialButton}
             size="large"
